@@ -15,6 +15,8 @@
     Install mysql db: sudo apt install mysql-server -y
     Mysql secure installations: sudo mysql_secure_installation
         Choose option: y/n
+<img width="515" alt="image" src="https://github.com/user-attachments/assets/1c9470b7-a100-4b89-9a71-ad92d440ddc3">
+
     Check status: sudo service mysql status
     Restart service: sudo service mysql restart
 ### MySQL Password setup:
