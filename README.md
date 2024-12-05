@@ -24,43 +24,46 @@
     Enter password: empty+enter
     Password setup query:
     ```
-        ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+        ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Admin!23';
         FLUSH PRIVILEGES;
         EXIT;
     ```
+<img width="609" alt="image" src="https://github.com/user-attachments/assets/9102d1c4-acdb-4dcf-bba1-9d74f5863775">
+
 ## Backend Setup
 ### backend folder: CRUD
 - Update your database details in this file
-  - backend/src/main/resources/**application.properties**
+  - crm-api/src/main/resources/**application.properties**
 ### Install java: 
-- sudo apt install openjdk-17* -y
+- sudo apt install openjdk-21* -y
 - Java --version
 ### build backend:
-- Change to backend directory: cd backend/
+- Change to backend directory: cd ~/crm-app/crm-api
 - chmod +x mvnw
-- ./mvnw clean package
+- ./mvnw clean package -D skipTest
 - you will get target folder
 - For manually running the application:
   - java -jar target/CRUD-0.0.1-SNAPSHOT.jar
-- Browser pub-ip:8080/api
-  - you will get message: **Successfully connected to Backend!**
+- Browser pub-ip:8080
+  - you will get message: **Whitelabel Error Page**
 ### Backend service setup:
 - backend service file to run the application in background
-- sudo vi /etc/systemd/system/course.service
+- sudo vi /etc/systemd/system/crm-api.service
 ```
 [Unit]
 Description=Your Spring Boot Application
 [Service]
-User=ubuntu
-ExecStart=/usr/bin/java -jar /home/ubuntu/dl-course-app/backend/target/CRUD-0.0.1-SNAPSHOT.jar
+User=azureuser
+ExecStart=/usr/bin/java -jar /home/azureuser/crm-app/crm-api/target/CRM-0.0.1-SNAPSHOT.jar
 SuccessExitStatus=143
 [Install]
 WantedBy=multi-user.target
 ```
 - sudo systemctl daemon-reload
-- sudo systemctl start course
-- sudo systemctl enable course
-##### Check backend in browser: http://pub-ip:8080/api
+- sudo systemctl start crm-api
+- sudo systemctl status crm-api
+- sudo systemctl enable crm-api
+##### Check backend in browser: http://pub-ip:8080
  
 ## Frontend Setup 
 ### frontend folder: course_store
