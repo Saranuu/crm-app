@@ -66,9 +66,10 @@ WantedBy=multi-user.target
 ##### Check backend in browser: http://pub-ip:8080
  
 ## Frontend Setup 
-### frontend folder: course_store
-- **frontend/src/Services/BaseURL.jsx**
+### frontend folder: crm-web
+- **crm-web/.env**
   - In **Line-1**: insted of **localhost** give backend **pub-ip**
+![image](https://github.com/user-attachments/assets/4a198445-3f59-4e2e-8d1b-f19b0ac76d8b)
 
 ### Install Node-20
 ```
@@ -77,13 +78,20 @@ sudo -E bash nodesource_setup.sh
 sudo apt-get install -y nodejs
 node -v
 ```
-- cd frontend/
+- cd crm-app/crm-web/
 - build tool is **npm**:
   - npm install
   - npm run build
 - Output folder **dist**
+<img width="604" alt="image" src="https://github.com/user-attachments/assets/5affd2ff-4ef2-41c5-b20b-1458fa144c2e">
+
 ### install nginx
 - sudo apt install nginx -y
 - sudo rm -rf /var/www/html/*
 - sudo cp -rf dist/* /var/www/html/
 - sudo systemctl restart nginx
+![image](https://github.com/user-attachments/assets/c9cc8a1e-ce49-4abd-a4d4-f1029641db7b)
+
+## Default Logins
+- username: admin
+- password: admin@123
