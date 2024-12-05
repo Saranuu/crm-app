@@ -95,3 +95,10 @@ node -v
 ## Default Logins
 - username: admin
 - password: admin@123
+
+### Create Lead
+- Just click on **Create Lead** and fill the details
+<img width="484" alt="image" src="https://github.com/user-attachments/assets/985d35be-7e35-48f0-95cd-9396e6fcd03b">
+- once lead create you can see the leads, if you can select and delete them
+![image](https://github.com/user-attachments/assets/4abc9592-acf5-4791-8cd0-9f6022d97665)
+
